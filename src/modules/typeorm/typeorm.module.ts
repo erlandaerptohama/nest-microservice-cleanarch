@@ -10,9 +10,10 @@ export const getTypeOrmModuleOptions = (): TypeOrmModuleOptions =>
         username: process.env.DATABASE_USER,
         password: process.env.DATABASE_PASS,
         database: process.env.DATABASE_NAME,
-        entities: [__dirname + './../../**/*.entity{.ts,.js}'],
+        retryAttempts: 3,
+        entities: ['dist/**/*.entity{.ts,.js}'],
         migrationsRun: true,
-        migrations: [__dirname + 'migrations/**/*{.ts,.js}'],
+        migrations: ['dist/migrations/**/*{.ts,.js}'],
         cli: {
             migrationsDir: 'migrations',
         },

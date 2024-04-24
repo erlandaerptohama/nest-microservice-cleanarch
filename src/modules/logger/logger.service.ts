@@ -4,19 +4,19 @@ import { ILogger } from '../../core/common/logger.interface';
 @Injectable()
 export class LoggerService extends Logger implements ILogger {
 
-    debug(context: string, message: string) {
-        super.debug(`[DEBUG] ${message}`, context);
+    debug(message: string) {
+        super.debug(`[DEBUG] ${message}`);
     }
-    log(context: string, message: string) {
-        super.log(`[INFO] ${message}`, context);
+    log(message: string) {
+        super.log(`[INFO] ${message}`);
     }
-    error(context: string, message: string, trace?: string) {
-        super.error(`[ERROR] ${message}`, trace, context);
+    error(message: string, trace?: string) {
+        super.error(`[ERROR] ${message}`, trace);
     }
-    warn(context: string, message: string) {
-        super.warn(`[WARN] ${message}`, context);
+    warn(message: string) {
+        super.warn(`[WARN] ${message}`);
     }
-    verbose(context: string, message: string) {
-        super.verbose(`[VERBOSE] ${message}`, context);
+    verbose(message: string) {
+        super.verbose(`[VERBOSE] ${message}`);
     }
 }

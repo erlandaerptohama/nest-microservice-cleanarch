@@ -27,14 +27,14 @@ export class UserUseCase {
 
     async insert(dto: AddUserDto): Promise<boolean> {
         const newUser = this.userFactory.addUser(dto);
-        this.logger.log("Insert User", `User DTO ${newUser.name}`);
+        this.logger.log(`User Model: ${JSON.stringify(newUser)}`);
 
         try {
             await this.userRepository.insert(newUser);
     
             return true;
         } catch (error) {
-            this.logger.error("Insert User", error)
+            this.logger.error(`Insert User error = ${error}`)
             this.exception.internalServerErrorException()
         }
     }
